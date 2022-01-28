@@ -88,8 +88,8 @@ def satisfaction():
 # Options for random itinerary assignment.
 destinations = ['New York', 'Las Vegas', 'Detroit', 'Seattle', 'Chicago']
 restaurants = ['Olive Garden', 'Applebees', 'Mellow Mushroom', 'Outback Steakhouse', 'Art of Pizza']
-modes_of_transportation = ['car', 'rollerblades', 'bicycle', 'motorcycle', 'bus']
-entertainments = ['the cinema', 'a concert', 'hackysack', 'Fight Club', 'paintball']
+modes_of_transportation = ['Car', 'Rollerblades', 'Bicycle', 'Motorcycle', 'Bus']
+entertainments = ['The Cinema', 'A Concert', 'Hackysack', 'Fight Club', 'Paintball']
 
 # Begins the process of choosing a randomly selected itinerary and its components, displays the itinerary for the user,
 # checks the user's satisfaction, and offers options to randomly change items.
