@@ -25,6 +25,13 @@ def display_list():
     for item in first_plan:
         print(item)
 
+
+# The selection is taken out of the list and reinserted in the correct index.
+def reinsert(index, assignment):               
+    first_plan.pop(index)                      
+    random_dest = random_selection(assignment)
+    first_plan.insert(0, random_dest)
+
 # If the user wishes to randomly change one item, they may declare which one. If the list drops to
 # one item, the user is stuck with the final randomly selected item.
 def random_reselect():
@@ -35,37 +42,29 @@ def random_reselect():
             if len(destinations) == 1:
                 print('No more destination options available.')
                 break
-            else:                                      # The selection is taken out of the list and reinserted in the correct 
-                first_plan.pop(0)                      # index.
-                random_dest = random_selection(destinations)
-                first_plan.insert(0, random_dest)
+            else:                                      
+                reinsert(0, destinations)
                 give_me_another = False
         elif reselection == 'Restaurant':
             if len(restaurants) == 1:
                 print('No more dining options available.')
                 break
             else:
-                first_plan.pop(1)
-                random_rest = random_selection(restaurants)
-                first_plan.insert(1, random_rest)
+                reinsert(1, restaurants)
                 give_me_another = False
         elif reselection == 'Transport':
             if len(modes_of_transportation) == 1:
                 print('No more transporation options available.')
                 break
             else:
-                first_plan.pop(2)
-                random_transport = random_selection(modes_of_transportation)
-                first_plan.insert(2, random_transport)
+                reinsert(2, modes_of_transportation)
                 give_me_another = False
         elif reselection == 'Entertainment':
             if len(entertainments) == 1:
                 print('No more entertainment options available.')
                 break
             else:
-                first_plan.pop(3)
-                random_entertain = random_selection(entertainments)
-                first_plan.insert(3, random_entertain)
+                reinsert(3, entertainments)
                 give_me_another = False
         elif reselection != 'Destination' or 'Restaurant' or 'Transport' or 'Entertainment':
             reselection = input('Invalid selection. Try again: ')
